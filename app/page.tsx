@@ -1,7 +1,7 @@
-import Image from "next/image";
+import { checkAuth } from "@/lib/auth";
+import LandingPage from "@/app/components/LandingPage";
 
-export default function Home() {
-  return (
-    <h1>Instagream clone</h1>
-  );
+export default async function Home() {
+  await checkAuth();
+  return <LandingPage />;
 }
